@@ -35,12 +35,18 @@ public class GameController : MonoBehaviour {
 
 	public void OnGameStart(SocketIOEvent e){
 		Debug.Log(e.data.ToString());
+		Debug.Log ("on Game Start ");
+		Debug.Log(e.data.GetField("player1").ToString());
 		lead = e.data.GetField("player1").GetField("id").ToString();
 		follow = e.data.GetField("player2").GetField("id").ToString();
+
+		Debug.Log(lead);
+		Debug.Log(follow);
 		sendLeadDance();
 	}
 
 	public void sendLeadDance(){
+		Debug.Log ("----send lead dance-----");
 		Dictionary<string, string> data = new Dictionary<string, string>();
 		JSONObject j = new JSONObject(JSONObject.Type.OBJECT);
 		JSONObject arr = new JSONObject(JSONObject.Type.ARRAY);
@@ -50,6 +56,7 @@ public class GameController : MonoBehaviour {
 		arr.Add("l");
 		j.AddField("dances", arr);
 		j.AddField("player", lead);
+		Debug.Log(j.ToString());
 		socket.Emit("FOLLOWDANCE", j);
 	}
 
@@ -63,6 +70,7 @@ public class GameController : MonoBehaviour {
 		// Dictionary<string, string> data = new Dictionary<string, string>();
 		// data["dance"] = new String[];
 		// ["l","l","d","l"];
+		Debug.Log("------send Follow dance -----------");
 		JSONObject j = new JSONObject(JSONObject.Type.OBJECT);
 		JSONObject arr = new JSONObject(JSONObject.Type.ARRAY);
 		arr.Add("l");
@@ -71,6 +79,7 @@ public class GameController : MonoBehaviour {
 		arr.Add("l");
 		j.AddField("dances", arr);
 		j.AddField("player", follow);
+		Debug.Log(j.ToString());
 		socket.Emit("FOLLOWDANCE", j);
 	}
 
