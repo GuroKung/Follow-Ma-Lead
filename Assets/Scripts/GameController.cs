@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour {
 	private string lead;
 	private string follow;
 	private GameObject[] players;
+	private boolean isLogin = false;
 
 	// Use this for initialization
 	void Start () {
@@ -25,8 +26,11 @@ public class GameController : MonoBehaviour {
 		Debug.Log(e.data.ToString());
 
 		Dictionary<string, string> data = new Dictionary<string, string>();
-		data["name"] = "John Doe";
-		socket.Emit("LOGIN", new JSONObject(data));
+		data["name"] = "Smart";
+		if(!isLogin){
+			socket.Emit("LOGIN", new JSONObject(data));
+			isLogin = true;
+		}
 	}
 
 	public void OnAuthen(SocketIOEvent e){
@@ -57,12 +61,13 @@ public class GameController : MonoBehaviour {
 		j.AddField("dances", arr);
 		j.AddField("player", lead);
 		Debug.Log(j.ToString());
-		socket.Emit("FOLLOWDANCE", j);
+		socket.Emit("LEADDANCE", j);
 	}
 
 	public void OnLeadDance(SocketIOEvent e){
 		//player : [lead] dance follow e.data.dance
-		sendFollowDance();
+		Debug.Log(e.data.ToString());
+		// sendFollowDance();
 	}
 
 	public void sendFollowDance(){
