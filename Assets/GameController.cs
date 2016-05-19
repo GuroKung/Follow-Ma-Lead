@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour {
 	private string lead;
 	private string follow;
 	private GameObject[] players;
-	private boolean isLogin = false;
+	private bool isLogin = false;
 
 	// Use this for initialization
 	void Start () {
@@ -67,7 +67,7 @@ public class GameController : MonoBehaviour {
 	public void OnLeadDance(SocketIOEvent e){
 		//player : [lead] dance follow e.data.dance
 		Debug.Log(e.data.ToString());
-		// sendFollowDance();
+		sendFollowDance();
 	}
 
 	public void sendFollowDance(){
