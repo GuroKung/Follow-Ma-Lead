@@ -32,7 +32,7 @@ public class LoginCtrl : MonoBehaviour {
 			Login_UI.alpha -= speed * Time.deltaTime;
 			yield return null;
 		}
-		canvasGroup.interactable = false;
+		Login_UI.interactable = false;
 	}
 
 	public void Login () {
