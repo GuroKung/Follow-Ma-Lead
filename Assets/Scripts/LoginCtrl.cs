@@ -24,15 +24,16 @@ public class LoginCtrl : MonoBehaviour {
 		Debug.Log(e.data.ToString());
 	}
 
+	public void Login () {
+		Dictionary<string, string> data = new Dictionary<string, string>();
+		data["name"] = username.text;
+		data["password"] = password.text;
+		socket.Emit("LOGIN", new JSONObject(data));
+	}
+
 	// Update is called once per frame
 	void Update () {
-		if (false){
 
-			Dictionary<string, string> data = new Dictionary<string, string>();
-			data["name"] = username.text;
-			data["password"] = password.text;
-			socket.Emit("LOGIN", new JSONObject(data));
-		}
 	}
 		
 }
