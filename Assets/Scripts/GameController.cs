@@ -14,23 +14,10 @@ public class GameController : MonoBehaviour {
 	void Start () {
 		GameObject go = GameObject.Find("SocketIO");
 		socket = go.GetComponent<SocketIOComponent>();
-		socket.On("NET_AVAILABLE", onConnection);
 		socket.On("CONNECTED", OnAuthen);
 		socket.On("GAMESTART", OnGameStart);
 		socket.On("ON_LEADDANCE", OnLeadDance);
 		socket.On("ON_CHECKDANCE", OnCheckDance);
-	}
-
-	public void onConnection(SocketIOEvent e){
-		Debug.Log("is Connected");
-		Debug.Log(e.data.ToString());
-
-		Dictionary<string, string> data = new Dictionary<string, string>();
-		data["name"] = "Smart";
-		if(!isLogin){
-			socket.Emit("LOGIN", new JSONObject(data));
-			isLogin = true;
-		}
 	}
 
 	public void OnAuthen(SocketIOEvent e){
