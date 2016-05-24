@@ -7,7 +7,7 @@ using System.Collections.Generic;
 public class LoginCtrl : MonoBehaviour {
 	public InputField username;
 	public InputField password;
-	public CanvasGroup canvasGroup;
+	public CanvasGroup Login_UI;
 
 	private SocketIOComponent socket;
 //	private string password = "";
@@ -27,11 +27,12 @@ public class LoginCtrl : MonoBehaviour {
 
 	IEnumerator FadeOut(float speed)
 	{
-		while (canvasGroup.alpha > 0)
+		while (Login_UI.alpha > 0)
 		{
-			canvasGroup.alpha -= speed * Time.deltaTime;
+			Login_UI.alpha -= speed * Time.deltaTime;
 			yield return null;
 		}
+		canvasGroup.interactable = false;
 	}
 
 	public void Login () {
