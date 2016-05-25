@@ -7,11 +7,18 @@ public class GameController : MonoBehaviour {
 	private SocketIOComponent socket;
 	private string lead;
 	private string follow;
+    private string player;
 	private GameObject[] players;
+    private bool isStart = false;
+    private bool isTurn = false;
 	private bool isLogin = false;
-
-	// Use this for initialization
-	void Start () {
+    private Vector2 firstPressPos;
+    private Vector2 secondPressPos;
+    private Vector2 currentSwipe;
+    private List<int> dances = new List<int>();
+    private int turn = 3;
+    // Use this for initialization
+    void Start () {
 		GameObject go = GameObject.Find("SocketIO");
 		socket = go.GetComponent<SocketIOComponent>();
 		socket.On("NET_AVAILABLE", onConnection);
@@ -33,69 +40,142 @@ public class GameController : MonoBehaviour {
 		}
 	}
 
+    private bool isLead()
+    {
+        return lead == player;
+        
+    }
+
 	public void OnAuthen(SocketIOEvent e){
 		Debug.Log(e.data.ToString());
 	}
 
 	public void OnGameStart(SocketIOEvent e){
-		Debug.Log(e.data.ToString());
-		Debug.Log ("on Game Start ");
-		Debug.Log(e.data.GetField("player1").ToString());
 		lead = e.data.GetField("player1").GetField("id").ToString();
 		follow = e.data.GetField("player2").GetField("id").ToString();
-
+        isTurn = isLead();
 		Debug.Log(lead);
 		Debug.Log(follow);
-		sendLeadDance();
+        if(isTurn) sendLeadDance();
 	}
 
 	public void sendLeadDance(){
-		Debug.Log ("----send lead dance-----");
-		Dictionary<string, string> data = new Dictionary<string, string>();
-		JSONObject j = new JSONObject(JSONObject.Type.OBJECT);
-		JSONObject arr = new JSONObject(JSONObject.Type.ARRAY);
-		arr.Add("l");
-		arr.Add("l");
-		arr.Add("l");
-		arr.Add("l");
-		j.AddField("dances", arr);
-		j.AddField("player", lead);
-		Debug.Log(j.ToString());
-		socket.Emit("LEADDANCE", j);
+		if(dances.Count >= turn)
+        {
+            Debug.Log("----send lead dance-----");
+            Dictionary<string, string> data = new Dictionary<string, string>();
+            JSONObject j = new JSONObject(JSONObject.Type.OBJECT);
+            JSONObject arr = new JSONObject(JSONObject.Type.ARRAY);
+            foreach (int i in dances)
+            {
+                arr.Add(i);
+            }
+            j.AddField("dances", arr);
+            j.AddField("player", lead);
+            Debug.Log(j.ToString());
+            socket.Emit("LEADDANCE", j);
+        }
 	}
 
 	public void OnLeadDance(SocketIOEvent e){
 		//player : [lead] dance follow e.data.dance
 		Debug.Log(e.data.ToString());
-		sendFollowDance();
+        changeTurn();
+		if(isTurn) sendFollowDance();
 	}
+
+    private void changeTurn()
+    {
+        isTurn = !isTurn;
+        dances = new List<int>();
+    }
 
 	public void sendFollowDance(){
 		//player : [follow] send input
 		// Dictionary<string, string> data = new Dictionary<string, string>();
 		// data["dance"] = new String[];
 		// ["l","l","d","l"];
-		Debug.Log("------send Follow dance -----------");
-		JSONObject j = new JSONObject(JSONObject.Type.OBJECT);
-		JSONObject arr = new JSONObject(JSONObject.Type.ARRAY);
-		arr.Add("l");
-		arr.Add("l");
-		arr.Add("d");
-		arr.Add("l");
-		j.AddField("dances", arr);
-		j.AddField("player", follow);
-		Debug.Log(j.ToString());
-		socket.Emit("FOLLOWDANCE", j);
+		if(dances.Count >= turn)
+        {
+            Debug.Log("------send Follow dance -----------");
+            JSONObject j = new JSONObject(JSONObject.Type.OBJECT);
+            JSONObject arr = new JSONObject(JSONObject.Type.ARRAY);
+            foreach (int i in dances)
+            {
+                arr.Add(i);
+            }
+            j.AddField("dances", arr);
+            j.AddField("player", follow);
+            Debug.Log(j.ToString());
+            socket.Emit("FOLLOWDANCE", j);
+        }
 	}
 
 	public void OnCheckDance(SocketIOEvent e){
-		if(e.data.GetField("isEnd").ToString() == "true"){
+        if (e.data.GetField("isEnd").ToString() == "true"){
 			Debug.Log("You lose");
 		}
-	}
+        changeTurn();
 
-	// Update is called once per frame
-	void Update () {
+    }
+    private void addDances(int i)
+    {
+        if(dances.Count < turn)
+        {
+            dances.Add(i);
+        }
+    }
 
-	}
+    // Update is called once per frame
+    void Update () {
+        if (isTurn)
+        {
+            //print ("Your turn ");
+            if (Input.touchCount > 0)
+            {
+                Touch t = Input.GetTouch(0);
+                if (t.phase == TouchPhase.Began)
+                {
+                    //save began touch 2d point
+                    firstPressPos = new Vector2(t.position.x, t.position.y);
+                }
+                if (t.phase == TouchPhase.Ended)
+                {
+                    //save ended touch 2d point
+                    secondPressPos = new Vector2(t.position.x, t.position.y);
+
+                    //create vector from the two points
+                    currentSwipe = new Vector3(secondPressPos.x - firstPressPos.x, secondPressPos.y - firstPressPos.y);
+
+                    //normalize the 2d vector
+                    currentSwipe.Normalize();
+
+                    //swipe upwards
+                    if (currentSwipe.y > 0 && currentSwipe.x > -0.5f && currentSwipe.x < 0.5f)
+                    {
+                        Debug.Log("up swipe");
+                        addDances(0);
+                    }
+                    //swipe down
+                    if (currentSwipe.y < 0 && currentSwipe.x > -0.5f && currentSwipe.x < 0.5f)
+                    {
+                        Debug.Log("down swipe");
+                        addDances(1);
+                    }
+                    //swipe left
+                    if (currentSwipe.x < 0 && currentSwipe.y > -0.5f && currentSwipe.y < 0.5f)
+                    {
+                        Debug.Log("left swipe");
+                        addDances(2);
+                    }
+                    //swipe right
+                    if (currentSwipe.x > 0 && currentSwipe.y > -0.5f && currentSwipe.y < 0.5f)
+                    {
+                        Debug.Log("right swipe");
+                        addDances(3);
+                    }
+                }
+            }
+        }
+    }
 }
