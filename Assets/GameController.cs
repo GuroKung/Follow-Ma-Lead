@@ -17,6 +17,8 @@ public class GameController : MonoBehaviour {
     private Vector2 currentSwipe;
     private List<int> dances = new List<int>();
     private int turn = 3;
+    // anime
+    Animator anim;
     // Use this for initialization
     void Start () {
 		GameObject go = GameObject.Find("SocketIO");
@@ -26,7 +28,9 @@ public class GameController : MonoBehaviour {
 		socket.On("GAMESTART", OnGameStart);
 		socket.On("ON_LEADDANCE", OnLeadDance);
 		socket.On("ON_CHECKDANCE", OnCheckDance);
-	}
+        // anime
+        anim = GetComponent<Animator>();
+    }
 
 	public void onConnection(SocketIOEvent e){
 		Debug.Log("is Connected");
@@ -154,24 +158,44 @@ public class GameController : MonoBehaviour {
                     if (currentSwipe.y > 0 && currentSwipe.x > -0.5f && currentSwipe.x < 0.5f)
                     {
                         Debug.Log("up swipe");
+
+                        //anim
+                        anim.SetInteger("PressKey", 1);
+                        anim.SetInteger("PressKey2", 1);
+
                         addDances(0);
                     }
                     //swipe down
                     if (currentSwipe.y < 0 && currentSwipe.x > -0.5f && currentSwipe.x < 0.5f)
                     {
                         Debug.Log("down swipe");
+
+                        //anim
+                        anim.SetInteger("PressKey", 2);
+                        anim.SetInteger("PressKey2", 2);
+
                         addDances(1);
                     }
                     //swipe left
                     if (currentSwipe.x < 0 && currentSwipe.y > -0.5f && currentSwipe.y < 0.5f)
                     {
                         Debug.Log("left swipe");
+
+                        //anim
+                        anim.SetInteger("PressKey", 3);
+                        anim.SetInteger("PressKey2", 3);
+
                         addDances(2);
                     }
                     //swipe right
                     if (currentSwipe.x > 0 && currentSwipe.y > -0.5f && currentSwipe.y < 0.5f)
                     {
                         Debug.Log("right swipe");
+
+                        //anim
+                        anim.SetInteger("PressKey", 4);
+                        anim.SetInteger("PressKey2", 4);
+
                         addDances(3);
                     }
                 }
