@@ -1,0 +1,1115 @@
+fileFormatVersion: 2
+guid: e2e1b60f34fbfde4dadc63136a2205e0
+timeCreated: 1463677174
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: PlayStation - Bishi Bashi Special - Dancing Stage_0
+    21300002: PlayStation - Bishi Bashi Special - Dancing Stage_1
+    21300004: PlayStation - Bishi Bashi Special - Dancing Stage_2
+    21300006: PlayStation - Bishi Bashi Special - Dancing Stage_3
+    21300008: PlayStation - Bishi Bashi Special - Dancing Stage_4
+    21300010: PlayStation - Bishi Bashi Special - Dancing Stage_5
+    21300012: PlayStation - Bishi Bashi Special - Dancing Stage_6
+    21300014: PlayStation - Bishi Bashi Special - Dancing Stage_7
+    21300016: PlayStation - Bishi Bashi Special - Dancing Stage_8
+    21300018: PlayStation - Bishi Bashi Special - Dancing Stage_9
+    21300020: PlayStation - Bishi Bashi Special - Dancing Stage_10
+    21300022: PlayStation - Bishi Bashi Special - Dancing Stage_11
+    21300024: PlayStation - Bishi Bashi Special - Dancing Stage_12
+    21300026: PlayStation - Bishi Bashi Special - Dancing Stage_13
+    21300028: PlayStation - Bishi Bashi Special - Dancing Stage_14
+    21300030: PlayStation - Bishi Bashi Special - Dancing Stage_15
+    21300032: PlayStation - Bishi Bashi Special - Dancing Stage_16
+    21300034: PlayStation - Bishi Bashi Special - Dancing Stage_17
+    21300036: PlayStation - Bishi Bashi Special - Dancing Stage_18
+    21300038: PlayStation - Bishi Bashi Special - Dancing Stage_19
+    21300040: PlayStation - Bishi Bashi Special - Dancing Stage_20
+    21300042: PlayStation - Bishi Bashi Special - Dancing Stage_21
+    21300044: PlayStation - Bishi Bashi Special - Dancing Stage_22
+    21300046: PlayStation - Bishi Bashi Special - Dancing Stage_23
+    21300048: PlayStation - Bishi Bashi Special - Dancing Stage_24
+    21300050: PlayStation - Bishi Bashi Special - Dancing Stage_25
+    21300052: PlayStation - Bishi Bashi Special - Dancing Stage_26
+    21300054: PlayStation - Bishi Bashi Special - Dancing Stage_27
+    21300056: PlayStation - Bishi Bashi Special - Dancing Stage_28
+    21300058: PlayStation - Bishi Bashi Special - Dancing Stage_29
+    21300060: PlayStation - Bishi Bashi Special - Dancing Stage_30
+    21300062: PlayStation - Bishi Bashi Special - Dancing Stage_31
+    21300064: PlayStation - Bishi Bashi Special - Dancing Stage_32
+    21300066: PlayStation - Bishi Bashi Special - Dancing Stage_33
+    21300068: PlayStation - Bishi Bashi Special - Dancing Stage_34
+    21300070: PlayStation - Bishi Bashi Special - Dancing Stage_35
+    21300072: PlayStation - Bishi Bashi Special - Dancing Stage_36
+    21300074: PlayStation - Bishi Bashi Special - Dancing Stage_37
+    21300076: PlayStation - Bishi Bashi Special - Dancing Stage_38
+    21300078: PlayStation - Bishi Bashi Special - Dancing Stage_39
+    21300080: PlayStation - Bishi Bashi Special - Dancing Stage_40
+    21300082: PlayStation - Bishi Bashi Special - Dancing Stage_41
+    21300084: PlayStation - Bishi Bashi Special - Dancing Stage_42
+    21300086: PlayStation - Bishi Bashi Special - Dancing Stage_43
+    21300088: PlayStation - Bishi Bashi Special - Dancing Stage_44
+    21300090: PlayStation - Bishi Bashi Special - Dancing Stage_45
+    21300092: PlayStation - Bishi Bashi Special - Dancing Stage_46
+    21300094: PlayStation - Bishi Bashi Special - Dancing Stage_47
+    21300096: PlayStation - Bishi Bashi Special - Dancing Stage_48
+    21300098: PlayStation - Bishi Bashi Special - Dancing Stage_49
+    21300100: PlayStation - Bishi Bashi Special - Dancing Stage_50
+    21300102: PlayStation - Bishi Bashi Special - Dancing Stage_51
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 407
+        width: 71
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35.5, y: 45}
+        - {x: -35.5, y: -7}
+        - {x: -7.5, y: -45}
+        - {x: 35.5, y: -45}
+        - {x: 35.5, y: 31}
+        - {x: 24.5, y: 45}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_1
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 407
+        width: 53
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: 41.5}
+        - {x: -26.5, y: 21.5}
+        - {x: -26.5, y: -12.5}
+        - {x: -15.5, y: -41.5}
+        - {x: 16.5, y: -41.5}
+        - {x: 26.5, y: -19.5}
+        - {x: 26.5, y: 27.5}
+        - {x: 13.5, y: 41.5}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_2
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 407
+        width: 70
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 35, y: 4.5}
+        - {x: 35, y: 24.5}
+        - {x: 10, y: 42.5}
+        - {x: -10, y: 42.5}
+        - {x: -16, y: 34.5}
+        - {x: -34, y: 21.5}
+        - {x: -35, y: 20.5}
+        - {x: -35, y: -3.5}
+        - {x: -21, y: -42.5}
+        - {x: 18, y: -42.5}
+        - {x: 19, y: -41.5}
+        - {x: 20, y: -34.5}
+        - {x: 20, y: -13.5}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_3
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 407
+        width: 50
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11, y: 42.5}
+        - {x: -16, y: 42.5}
+        - {x: -25, y: 15.5}
+        - {x: -25, y: -42.5}
+        - {x: 25, y: -42.5}
+        - {x: 25, y: 10.5}
+        - {x: 13, y: 39.5}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_4
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 410
+        width: 56
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 43.5}
+        - {x: -28, y: -30.5}
+        - {x: -18, y: -43.5}
+        - {x: 10, y: -43.5}
+        - {x: 28, y: -10.5}
+        - {x: 28, y: 21.5}
+        - {x: 15, y: 43.5}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_5
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 407
+        width: 56
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 42}
+        - {x: -28, y: 16}
+        - {x: -28, y: -8}
+        - {x: -23, y: -15}
+        - {x: -15, y: -19}
+        - {x: -9, y: -18}
+        - {x: -9, y: -40}
+        - {x: -7, y: -42}
+        - {x: 14, y: -42}
+        - {x: 28, y: -27}
+        - {x: 28, y: 29}
+        - {x: 25, y: 42}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_6
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 412
+        width: 53
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.5, y: 37.5}
+        - {x: -26.5, y: 11.5}
+        - {x: -26.5, y: -17.5}
+        - {x: -16.5, y: -37.5}
+        - {x: 16.5, y: -37.5}
+        - {x: 26.5, y: -23.5}
+        - {x: 26.5, y: 25.5}
+        - {x: 21.5, y: 37.5}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_7
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 442
+        width: 78
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -39, y: 30}
+        - {x: -39, y: -1}
+        - {x: -38, y: -4}
+        - {x: -31, y: -10}
+        - {x: -28, y: -9}
+        - {x: -30, y: -13}
+        - {x: -33, y: -9}
+        - {x: -39, y: -10}
+        - {x: -39, y: -25}
+        - {x: -29, y: -30}
+        - {x: 24, y: -30}
+        - {x: 39, y: -26}
+        - {x: 39, y: 30}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_8
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 407
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 44}
+        - {x: -35, y: 27}
+        - {x: -35, y: -10}
+        - {x: -15, y: -44}
+        - {x: 14, y: -44}
+        - {x: 35, y: 4}
+        - {x: 35, y: 31}
+        - {x: 11, y: 44}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_9
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 407
+        width: 50
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16, y: 43}
+        - {x: 13, y: 44}
+        - {x: -14, y: 44}
+        - {x: -25, y: 26}
+        - {x: -25, y: -19}
+        - {x: -16, y: -44}
+        - {x: 12, y: -44}
+        - {x: 13, y: -39}
+        - {x: 25, y: -7}
+        - {x: 25, y: 15}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_10
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 407
+        width: 54
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 44}
+        - {x: -27, y: 24}
+        - {x: -27, y: -19}
+        - {x: -18, y: -44}
+        - {x: 12, y: -44}
+        - {x: 27, y: -4}
+        - {x: 27, y: 43}
+        - {x: 19, y: 44}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_11
+      rect:
+        serializedVersion: 2
+        x: 1070
+        y: 407
+        width: 52
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 44}
+        - {x: -24, y: 40}
+        - {x: -26, y: 34}
+        - {x: -26, y: -18}
+        - {x: -18, y: -44}
+        - {x: 14, y: -44}
+        - {x: 26, y: -34}
+        - {x: 26, y: 26}
+        - {x: 20, y: 44}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_12
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 406
+        width: 54
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 36}
+        - {x: -27, y: 28}
+        - {x: -27, y: -17}
+        - {x: -16, y: -36}
+        - {x: 22, y: -36}
+        - {x: 27, y: -29}
+        - {x: 27, y: 36}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_13
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 311
+        width: 50
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 45}
+        - {x: -25, y: -37}
+        - {x: -11, y: -45}
+        - {x: 21, y: -45}
+        - {x: 25, y: -26}
+        - {x: 25, y: 31}
+        - {x: 7, y: 45}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_14
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 311
+        width: 48
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 45}
+        - {x: -24, y: 39}
+        - {x: -24, y: -33}
+        - {x: -11, y: -45}
+        - {x: 19, y: -45}
+        - {x: 24, y: -21}
+        - {x: 24, y: 33}
+        - {x: 16, y: 45}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_15
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 311
+        width: 54
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 42.5}
+        - {x: -27, y: 32.5}
+        - {x: -27, y: -42.5}
+        - {x: 27, y: -42.5}
+        - {x: 27, y: 26.5}
+        - {x: 20, y: 42.5}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_16
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 311
+        width: 58
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 44}
+        - {x: -29, y: 42}
+        - {x: -29, y: -10}
+        - {x: -17, y: -44}
+        - {x: 14, y: -44}
+        - {x: 29, y: -4}
+        - {x: 29, y: 42}
+        - {x: 19, y: 44}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_17
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 316
+        width: 63
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.5, y: 45}
+        - {x: -31.5, y: 35}
+        - {x: -31.5, y: -24}
+        - {x: -9.5, y: -45}
+        - {x: 7.5, y: -45}
+        - {x: 31.5, y: -1}
+        - {x: 31.5, y: 32}
+        - {x: 21.5, y: 45}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_18
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 311
+        width: 58
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 42.5}
+        - {x: -29, y: 40.5}
+        - {x: -29, y: -33.5}
+        - {x: -28, y: -42.5}
+        - {x: 26, y: -42.5}
+        - {x: 29, y: -23.5}
+        - {x: 29, y: 42.5}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_19
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 317
+        width: 70
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 45}
+        - {x: -35, y: 23}
+        - {x: -35, y: -11}
+        - {x: -8, y: -45}
+        - {x: 30, y: -45}
+        - {x: 35, y: -27}
+        - {x: 35, y: 45}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_20
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 311
+        width: 47
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.5, y: 45}
+        - {x: -23.5, y: 33}
+        - {x: -23.5, y: -18}
+        - {x: -12.5, y: -45}
+        - {x: 5.5, y: -45}
+        - {x: 23.5, y: -25}
+        - {x: 23.5, y: 45}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_21
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 311
+        width: 54
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 44}
+        - {x: -24, y: 41}
+        - {x: -27, y: 20}
+        - {x: -27, y: -25}
+        - {x: -12, y: -44}
+        - {x: 15, y: -44}
+        - {x: 27, y: -34}
+        - {x: 27, y: 26}
+        - {x: 21, y: 44}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_22
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 311
+        width: 50
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 44}
+        - {x: -17, y: 43}
+        - {x: -25, y: 27}
+        - {x: -25, y: -20}
+        - {x: -17, y: -44}
+        - {x: 14, y: -44}
+        - {x: 25, y: -18}
+        - {x: 25, y: 19}
+        - {x: 12, y: 44}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_23
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 311
+        width: 60
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 44}
+        - {x: -30, y: 23}
+        - {x: -30, y: -11}
+        - {x: -17, y: -44}
+        - {x: 9, y: -44}
+        - {x: 30, y: -19}
+        - {x: 30, y: 30}
+        - {x: 21, y: 44}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_24
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 311
+        width: 56
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 44}
+        - {x: -23, y: 39}
+        - {x: -28, y: 17}
+        - {x: -28, y: -29}
+        - {x: -13, y: -44}
+        - {x: 20, y: -44}
+        - {x: 28, y: -8}
+        - {x: 28, y: 44}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_25
+      rect:
+        serializedVersion: 2
+        x: 1148
+        y: 310
+        width: 55
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 26.5, y: 30}
+        - {x: 18.5, y: 28}
+        - {x: 14.5, y: 24}
+        - {x: 14.5, y: 20}
+        - {x: 14.5, y: 27}
+        - {x: 23.5, y: 33}
+        - {x: 17.5, y: 36}
+        - {x: -18.5, y: 36}
+        - {x: -27.5, y: 14}
+        - {x: -27.5, y: -23}
+        - {x: -14.5, y: -36}
+        - {x: 14.5, y: -36}
+        - {x: 15.5, y: -31}
+        - {x: 27.5, y: -5}
+        - {x: 27.5, y: 27}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_26
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 203
+        width: 68
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 45}
+        - {x: -34, y: 9}
+        - {x: -18, y: -45}
+        - {x: 34, y: -45}
+        - {x: 34, y: 45}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_27
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 203
+        width: 37
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3.5, y: 44}
+        - {x: -18.5, y: 34}
+        - {x: -18.5, y: -44}
+        - {x: 18.5, y: -44}
+        - {x: 18.5, y: 40}
+        - {x: 16.5, y: 44}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_28
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 196
+        width: 46
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 46}
+        - {x: -23, y: 32}
+        - {x: -23, y: -41}
+        - {x: -22, y: -46}
+        - {x: 3, y: -46}
+        - {x: 23, y: 5}
+        - {x: 23, y: 35}
+        - {x: 8, y: 46}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_29
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 196
+        width: 43
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.5, y: 42}
+        - {x: 8.5, y: 46}
+        - {x: -15.5, y: 46}
+        - {x: -21.5, y: 35}
+        - {x: -21.5, y: -34}
+        - {x: -16.5, y: -46}
+        - {x: 7.5, y: -46}
+        - {x: 21.5, y: -35}
+        - {x: 21.5, y: -3}
+        - {x: 14.5, y: 27}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_30
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 195
+        width: 43
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21.5, y: 4.5}
+        - {x: 21.5, y: 34.5}
+        - {x: 3.5, y: 46.5}
+        - {x: -18.5, y: 46.5}
+        - {x: -20.5, y: 44.5}
+        - {x: -21.5, y: 41.5}
+        - {x: -21.5, y: -7.5}
+        - {x: -19.5, y: -9.5}
+        - {x: -12.5, y: -41.5}
+        - {x: -8.5, y: -46.5}
+        - {x: 2.5, y: -46.5}
+        - {x: 13.5, y: -37.5}
+        - {x: 13.5, y: -26.5}
+        - {x: 18.5, y: -8.5}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_31
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 193
+        width: 43
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1.5, y: 44}
+        - {x: -21.5, y: 33}
+        - {x: -21.5, y: -27}
+        - {x: -16.5, y: -44}
+        - {x: -0.5, y: -44}
+        - {x: 21.5, y: -31}
+        - {x: 21.5, y: 44}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_32
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 196
+        width: 41
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3.5, y: 40}
+        - {x: -20.5, y: 31}
+        - {x: -20.5, y: -39}
+        - {x: -16.5, y: -40}
+        - {x: 20.5, y: -40}
+        - {x: 20.5, y: 39}
+        - {x: 19.5, y: 40}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_33
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 224
+        width: 88
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 37, y: -14}
+        - {x: 43, y: 3}
+        - {x: 30, y: 13}
+        - {x: 25, y: 12}
+        - {x: 26, y: 15}
+        - {x: 29, y: 34}
+        - {x: -8, y: 34}
+        - {x: -44, y: 7}
+        - {x: -44, y: -34}
+        - {x: 29, y: -34}
+        - {x: 40, y: -31}
+        - {x: 44, y: -24}
+        - {x: 44, y: -15}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_34
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 199
+        width: 82
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 29, y: 19}
+        - {x: 16, y: 48}
+        - {x: -13, y: 48}
+        - {x: -41, y: 35}
+        - {x: -41, y: -40}
+        - {x: -38, y: -48}
+        - {x: 31, y: -48}
+        - {x: 41, y: -10}
+        - {x: 41, y: 20}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_35
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 199
+        width: 37
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18.5, y: 37}
+        - {x: 14.5, y: 48}
+        - {x: -15.5, y: 48}
+        - {x: -18.5, y: 35}
+        - {x: -18.5, y: -48}
+        - {x: -11.5, y: -48}
+        - {x: -7.5, y: -44}
+        - {x: 7.5, y: -48}
+        - {x: 18.5, y: -48}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_36
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 203
+        width: 82
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 41, y: 18}
+        - {x: 29, y: 17}
+        - {x: 16, y: 46}
+        - {x: -22, y: 46}
+        - {x: -41, y: 35}
+        - {x: -41, y: -22}
+        - {x: -27, y: -46}
+        - {x: 13, y: -46}
+        - {x: 15, y: -23}
+        - {x: 41, y: -2}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_37
+      rect:
+        serializedVersion: 2
+        x: 1082
+        y: 203
+        width: 31
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_38
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 205
+        width: 40
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 43.5}
+        - {x: -20, y: 31.5}
+        - {x: -20, y: -10.5}
+        - {x: -14, y: -43.5}
+        - {x: 18, y: -43.5}
+        - {x: 20, y: -33.5}
+        - {x: 20, y: 43.5}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_39
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 107
+        width: 46
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 45}
+        - {x: -23, y: 36}
+        - {x: -23, y: -45}
+        - {x: 23, y: -45}
+        - {x: 23, y: 43}
+        - {x: 15, y: 45}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_40
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 107
+        width: 45
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.5, y: 45}
+        - {x: -22.5, y: 30}
+        - {x: -22.5, y: -45}
+        - {x: 22.5, y: -45}
+        - {x: 22.5, y: 45}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_41
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 100
+        width: 55
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27.5, y: 46}
+        - {x: -27.5, y: -46}
+        - {x: 4.5, y: -46}
+        - {x: 27.5, y: -15}
+        - {x: 27.5, y: 41}
+        - {x: 14.5, y: 46}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_42
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 100
+        width: 59
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.5, y: 46}
+        - {x: -29.5, y: 8}
+        - {x: -29.5, y: -34}
+        - {x: -27.5, y: -36}
+        - {x: -14.5, y: -46}
+        - {x: 9.5, y: -46}
+        - {x: 29.5, y: 13}
+        - {x: 29.5, y: 31}
+        - {x: 16.5, y: 46}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_43
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 101
+        width: 63
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 29.5, y: 29.5}
+        - {x: 20.5, y: 33.5}
+        - {x: 13.5, y: 29.5}
+        - {x: 16.5, y: 32.5}
+        - {x: 16.5, y: 35.5}
+        - {x: 5.5, y: 45.5}
+        - {x: -28.5, y: 45.5}
+        - {x: -31.5, y: 39.5}
+        - {x: -31.5, y: 6.5}
+        - {x: -26.5, y: -21.5}
+        - {x: -12.5, y: -45.5}
+        - {x: -3.5, y: -45.5}
+        - {x: 1.5, y: -38.5}
+        - {x: 31.5, y: 4.5}
+        - {x: 31.5, y: 24.5}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_44
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 97
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 48}
+        - {x: -32, y: 36}
+        - {x: -32, y: 0}
+        - {x: -19, y: -48}
+        - {x: 29, y: -48}
+        - {x: 32, y: -30}
+        - {x: 32, y: 38}
+        - {x: 20, y: 48}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_45
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 96
+        width: 85
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 33.5, y: 24}
+        - {x: 28.5, y: 22}
+        - {x: 35.5, y: 39}
+        - {x: 32.5, y: 48}
+        - {x: -19.5, y: 48}
+        - {x: -42.5, y: 34}
+        - {x: -42.5, y: 2}
+        - {x: -40.5, y: -1}
+        - {x: -7.5, y: -48}
+        - {x: 9.5, y: -48}
+        - {x: 25.5, y: -13}
+        - {x: 42.5, y: 5}
+        - {x: 42.5, y: 24}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_46
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 100
+        width: 37
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.5, y: -43.5}
+        - {x: -17.5, y: -45.5}
+        - {x: 4.5, y: -45.5}
+        - {x: 18.5, y: -38.5}
+        - {x: 18.5, y: 45.5}
+        - {x: -17.5, y: 45.5}
+        - {x: -18.5, y: 44.5}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_47
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 103
+        width: 56
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 48}
+        - {x: -28, y: 9}
+        - {x: -28, y: -43}
+        - {x: -26, y: -48}
+        - {x: 28, y: -48}
+        - {x: 28, y: 39}
+        - {x: 18, y: 48}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_48
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 103
+        width: 64
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 46}
+        - {x: -32, y: -4}
+        - {x: -18, y: -46}
+        - {x: 12, y: -46}
+        - {x: 32, y: 13}
+        - {x: 32, y: 33}
+        - {x: 23, y: 46}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_49
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 107
+        width: 56
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15, y: 46}
+        - {x: -14, y: 46}
+        - {x: -28, y: 8}
+        - {x: -28, y: -34}
+        - {x: -26, y: -36}
+        - {x: -13, y: -46}
+        - {x: 14, y: -46}
+        - {x: 28, y: -35}
+        - {x: 28, y: -5}
+        - {x: 20, y: 31}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_50
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 107
+        width: 32
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 46}
+        - {x: -16, y: 41}
+        - {x: -16, y: -37}
+        - {x: -15, y: -46}
+        - {x: 16, y: -46}
+        - {x: 16, y: 46}
+    - name: PlayStation - Bishi Bashi Special - Dancing Stage_51
+      rect:
+        serializedVersion: 2
+        x: 1154
+        y: 109
+        width: 46
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4, y: 40.5}
+        - {x: -23, y: 30.5}
+        - {x: -23, y: 1.5}
+        - {x: -16, y: -40.5}
+        - {x: 21, y: -40.5}
+        - {x: 23, y: -27.5}
+        - {x: 23, y: 40.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
