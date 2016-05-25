@@ -8,6 +8,7 @@ public class SceneCtrl : MonoBehaviour {
 	public CanvasGroup Lobby_Scene;
 	public CanvasGroup Room_Scene;
 
+
 	private SocketIOComponent socket;
 	// Use this for initialization
 	void Start () {
@@ -15,11 +16,18 @@ public class SceneCtrl : MonoBehaviour {
 		socket = go.GetComponent<SocketIOComponent>();
 
 		socket.On("CONNECTED", OnAuthen);
+		socket.On("USER_JOIN", OnUserJoin);
 	}
 		
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	void OnUserJoin (SocketIOEvent e){
+		Debug.Log("User join room");
+		StartCoroutine (FadeOut (Lobby_Scene, 1.0f));
+		StartCoroutine (FadeIn (Room_Scene, 1.0f));
 	}
 
 	void OnAuthen(SocketIOEvent e){

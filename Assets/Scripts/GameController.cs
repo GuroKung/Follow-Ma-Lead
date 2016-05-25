@@ -4,10 +4,10 @@ using SocketIO;
 using System.Collections.Generic;
 
 public class GameController : MonoBehaviour {
+	private string player;
 	private SocketIOComponent socket;
 	private string lead;
 	private string follow;
-    private string player;
 	private GameObject[] players;
     private bool isStart = false;
     private bool isTurn = false;
@@ -23,7 +23,10 @@ public class GameController : MonoBehaviour {
     void Start () {
 		GameObject go = GameObject.Find("SocketIO");
 		socket = go.GetComponent<SocketIOComponent>();
+
+		// Socket Events
 		socket.On("CONNECTED", OnAuthen);
+		socket.On("USER_JOIN", OnUserJoin);
 		socket.On("GAMESTART", OnGameStart);
 		socket.On("ON_LEADDANCE", OnLeadDance);
 		socket.On("ON_CHECKDANCE", OnCheckDance);
@@ -39,6 +42,21 @@ public class GameController : MonoBehaviour {
 		
 	public void OnAuthen(SocketIOEvent e){
 		Debug.Log(e.data.ToString());
+		player = e.data.GetField("id").ToString();
+	}
+
+	public void OnUserJoin(SocketIOEvent e){
+		Debug.Log("is Joined");
+		Debug.Log(e.data.ToString());
+	}
+
+	public void Join () {
+		Debug.Log ("User Join game");
+		JSONObject j = new JSONObject (JSONObject.Type.OBJECT);
+		string n = player.Substring (1, player.Length - 2);
+		j.AddField("player_id", n);
+		print (j.ToString());
+		socket.Emit("JOIN_GAME", j);
 	}
 
 	public void OnGameStart(SocketIOEvent e){
