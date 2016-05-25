@@ -1,22 +1,32 @@
 ﻿using UnityEngine;
+using System;
+using System.Linq;
 using System.Collections;
 using SocketIO;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
-	private string player;
-	private SocketIOComponent socket;
+    public List<GameObject> players;
+    public Text test;
+
+    private SocketIOComponent socket;
 	private string lead;
 	private string follow;
-	private GameObject[] players;
+    private string player;
+    private int playerID;
+
     private bool isStart = false;
-    private bool isTurn = false;
+    private bool isTurn = true;
 	private bool isLogin = false;
+
     private Vector2 firstPressPos;
     private Vector2 secondPressPos;
     private Vector2 currentSwipe;
+
     private List<int> dances = new List<int>();
     private int turn = 3;
+    private int phase = 1;
     // anime
     Animator anim;
     // Use this for initialization
@@ -32,6 +42,7 @@ public class GameController : MonoBehaviour {
 		socket.On("ON_CHECKDANCE", OnCheckDance);
         // anime
         anim = GetComponent<Animator>();
+        //players[0].GetComponent<movetMentController>().setDance(1);
     }
 		
     private bool isLead()
@@ -65,30 +76,34 @@ public class GameController : MonoBehaviour {
         isTurn = isLead();
 		Debug.Log(lead);
 		Debug.Log(follow);
-        if(isTurn) sendLeadDance();
+        phase = 1;
+        //if(isTurn) sendLeadDance();
 	}
 
 	public void sendLeadDance(){
-		if(dances.Count >= turn)
+        Dictionary<string, string> data = new Dictionary<string, string>();
+        JSONObject j = new JSONObject(JSONObject.Type.OBJECT);
+        JSONObject arr = new JSONObject(JSONObject.Type.ARRAY);
+        foreach (int i in dances)
         {
-            Debug.Log("----send lead dance-----");
-            Dictionary<string, string> data = new Dictionary<string, string>();
-            JSONObject j = new JSONObject(JSONObject.Type.OBJECT);
-            JSONObject arr = new JSONObject(JSONObject.Type.ARRAY);
-            foreach (int i in dances)
-            {
-                arr.Add(i);
-            }
-            j.AddField("dances", arr);
-            j.AddField("player", lead);
-            Debug.Log(j.ToString());
-            socket.Emit("LEADDANCE", j);
+            arr.Add(i);
         }
+        j.AddField("dances", arr);
+        j.AddField("player", lead);
+        Debug.Log(j.ToString());
+        socket.Emit("LEADDANCE", j);
+        test.text += j.ToString();
 	}
 
 	public void OnLeadDance(SocketIOEvent e){
-		//player : [lead] dance follow e.data.dance
-		Debug.Log(e.data.ToString());
+		movetMentController play = players[0].GetComponent<movetMentController>();
+        test.text = "";
+        ArrayObject a = ArrayObject.createFromJson(e.data.ToString());
+        foreach ( int x in a.lead_dances)
+        {
+            test.text += x + " ";
+            play.setDance(x);
+        }
         changeTurn();
 		if(isTurn) sendFollowDance();
 	}
@@ -132,6 +147,22 @@ public class GameController : MonoBehaviour {
         if(dances.Count < turn)
         {
             dances.Add(i);
+            players[0].GetComponent<movetMentController>().setDance(i);
+            foreach(int d in dances)
+            {
+                test.text += " " + d;
+            }
+        }
+        else
+        {
+            if(phase == 1)
+            {
+                test.text = "send lead dance";
+                sendLeadDance();
+            }else if (phase == 2 && !isLead())
+            {
+                sendFollowDance();
+            }
         }
     }
 
@@ -163,44 +194,28 @@ public class GameController : MonoBehaviour {
                     if (currentSwipe.y > 0 && currentSwipe.x > -0.5f && currentSwipe.x < 0.5f)
                     {
                         Debug.Log("up swipe");
-
-                        //anim
-                        anim.SetInteger("PressKey", 1);
-                        anim.SetInteger("PressKey2", 1);
-
-                        addDances(0);
+                        test.text = "up " + 1;
+                        addDances(1);
                     }
                     //swipe down
                     if (currentSwipe.y < 0 && currentSwipe.x > -0.5f && currentSwipe.x < 0.5f)
                     {
                         Debug.Log("down swipe");
-
-                        //anim
-                        anim.SetInteger("PressKey", 2);
-                        anim.SetInteger("PressKey2", 2);
-
-                        addDances(1);
+                        test.text = "down " + 2;
+                        addDances(2);
                     }
                     //swipe left
                     if (currentSwipe.x < 0 && currentSwipe.y > -0.5f && currentSwipe.y < 0.5f)
                     {
                         Debug.Log("left swipe");
-
-                        //anim
-                        anim.SetInteger("PressKey", 3);
-                        anim.SetInteger("PressKey2", 3);
-
-                        addDances(2);
+                        test.text = "left " + 4;
+                        addDances(4);
                     }
                     //swipe right
                     if (currentSwipe.x > 0 && currentSwipe.y > -0.5f && currentSwipe.y < 0.5f)
                     {
                         Debug.Log("right swipe");
-
-                        //anim
-                        anim.SetInteger("PressKey", 4);
-                        anim.SetInteger("PressKey2", 4);
-
+                        test.text = "right " + 3;
                         addDances(3);
                     }
                 }
