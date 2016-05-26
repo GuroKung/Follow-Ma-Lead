@@ -4,9 +4,9 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class SceneCtrl : MonoBehaviour {
-	public CanvasGroup Login_Scene;
-	public CanvasGroup Lobby_Scene;
-	public CanvasGroup Room_Scene;
+	public GameObject Login_Scene;
+	public GameObject Lobby_Scene;
+	public GameObject Room_Scene;
 
 
 	private SocketIOComponent socket;
@@ -26,6 +26,8 @@ public class SceneCtrl : MonoBehaviour {
 
 	void OnUserJoin (SocketIOEvent e){
 		Debug.Log("User join room");
+		CanvasGroup room_canvas = Room_Scene.GetComponent<CanvasGroup>();
+
 		StartCoroutine (FadeOut (Lobby_Scene, 1.0f));
 		StartCoroutine (FadeIn (Room_Scene, 1.0f));
 	}
@@ -36,23 +38,27 @@ public class SceneCtrl : MonoBehaviour {
 		StartCoroutine (FadeIn (Lobby_Scene, 1.0f));
 	}
 
-	IEnumerator FadeIn(CanvasGroup canvasGroup, float speed)
-	{
+	IEnumerator FadeIn(GameObject scene, float speed)
+	{	
+		CanvasGroup canvasGroup = scene.GetComponent<CanvasGroup>();
 		while (canvasGroup.alpha < 1f)
 		{
 			canvasGroup.alpha += speed * Time.deltaTime;
 			yield return null;
 		}
+		scene.SetActive (true);
 		canvasGroup.interactable = true;
 	}
 
-	IEnumerator FadeOut(CanvasGroup canvasGroup, float speed)
+	IEnumerator FadeOut(GameObject scene, float speed)
 	{
+		CanvasGroup canvasGroup = scene.GetComponent<CanvasGroup>();
 		while (canvasGroup.alpha > 0)
 		{
 			canvasGroup.alpha -= speed * Time.deltaTime;
 			yield return null;
 		}
+		scene.SetActive (false);
 		canvasGroup.interactable = false;
 	}
 }
