@@ -80,8 +80,6 @@ public class GameController : MonoBehaviour {
         playerTexts[0].text = lead;
         playerTexts[1].text = follow;
         isTurn = isLead();
-
-        playerTexts[0].text = "" + isTurn;
         phase = 1;
         //if(isTurn) sendLeadDance();
 	}
@@ -95,23 +93,25 @@ public class GameController : MonoBehaviour {
             arr.Add(i);
         }
         j.AddField("dances", arr);
-        j.AddField("player", lead);
+        j.AddField("player", player);
         Debug.Log(j.ToString());
+        test.text = lead;
         socket.Emit("LEADDANCE", j);
-        test.text += j.ToString();
 	}
 
 	public void OnLeadDance(SocketIOEvent e){
+        test.text = "On lead dance";
 		movetMentController play = players[0].GetComponent<movetMentController>();
         test.text = "";
         ArrayObject a = ArrayObject.createFromJson(e.data.ToString());
         foreach ( int x in a.lead_dances)
         {
+            print(x);
             test.text += x + " ";
             play.setDance(x);
         }
-        changeTurn();
-		if(isTurn) sendFollowDance();
+        //changeTurn();
+		//if(isTurn) sendFollowDance();
 	}
 
     private void changeTurn()
@@ -165,6 +165,7 @@ public class GameController : MonoBehaviour {
             {
                 test.text = "send lead dance";
                 sendLeadDance();
+                changeTurn();
             }else if (phase == 2 && !isLead())
             {
                 sendFollowDance();
