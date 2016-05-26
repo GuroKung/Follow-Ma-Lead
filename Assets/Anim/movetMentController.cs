@@ -13,12 +13,15 @@ public class movetMentController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        firstElement = dance.First();
-            if (anim.GetInteger("PressKey") == 0 && firstElement!=null)
+        if(dance.Count > 0)
+        {
+            firstElement = dance.First();
+            if (anim.GetInteger("PressKey") == 0 && firstElement != null)
             {
                 anim.SetInteger("PressKey", firstElement);
                 dance.Remove(firstElement);
             }
+        }
         }
 
     public void setDance(int i)
