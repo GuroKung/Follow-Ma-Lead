@@ -52,6 +52,7 @@ public class SceneCtrl : MonoBehaviour {
 		StartCoroutine (FadeOut (Login_Scene, 2.0f));
 		StartCoroutine (FadeOut (Regis_Scene, 2.0f));
 		StartCoroutine (FadeIn (Lobby_Scene, 2.0f));
+
 	}
 
 	IEnumerator FadeIn(GameObject scene, float speed)

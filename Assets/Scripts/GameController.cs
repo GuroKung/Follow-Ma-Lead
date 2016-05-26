@@ -131,6 +131,7 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void OnGameStart(SocketIOEvent e){
+        this.GetComponent<AudioController>().playGame();
 		lead = e.data.GetField("player1").GetField("id").ToString();
 		follow = e.data.GetField("player2").GetField("id").ToString();
         lead = lead.Substring(1, lead.Length - 2);
@@ -250,6 +251,7 @@ public class GameController : MonoBehaviour {
             {
                 players[i].GetComponent<movetMentController>().setDance(5 + i);
             }
+            this.GetComponent<AudioController>().playEnd();
         }else {
             endTurn();
         }
