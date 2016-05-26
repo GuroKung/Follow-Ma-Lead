@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour {
     public List<GameObject> players;
     public Text test;
+    public List<Text> playerTexts;
 
     private SocketIOComponent socket;
 	private string lead;
@@ -17,7 +18,7 @@ public class GameController : MonoBehaviour {
     private int playerID;
 
     private bool isStart = false;
-    private bool isTurn = true;
+    private bool isTurn = false;
 	private bool isLogin = false;
 
     private Vector2 firstPressPos;
@@ -26,7 +27,7 @@ public class GameController : MonoBehaviour {
 
     private List<int> dances = new List<int>();
     private int turn = 3;
-    private int phase = 1;
+    private int phase = 0;
     // anime
     Animator anim;
     // Use this for initialization
@@ -73,9 +74,14 @@ public class GameController : MonoBehaviour {
 	public void OnGameStart(SocketIOEvent e){
 		lead = e.data.GetField("player1").GetField("id").ToString();
 		follow = e.data.GetField("player2").GetField("id").ToString();
+        lead = lead.Substring(1, lead.Length - 2);
+        follow = follow.Substring(1, follow.Length - 2);
+        player = player.Substring(1, player.Length - 2);
+        playerTexts[0].text = lead;
+        playerTexts[1].text = follow;
         isTurn = isLead();
-		Debug.Log(lead);
-		Debug.Log(follow);
+
+        playerTexts[0].text = "" + isTurn;
         phase = 1;
         //if(isTurn) sendLeadDance();
 	}
@@ -155,7 +161,7 @@ public class GameController : MonoBehaviour {
         }
         else
         {
-            if(phase == 1)
+            if(phase == 1 && isTurn)
             {
                 test.text = "send lead dance";
                 sendLeadDance();
