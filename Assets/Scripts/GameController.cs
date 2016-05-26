@@ -244,6 +244,10 @@ public class GameController : MonoBehaviour {
         {
             dances.Add(i);
             players[playerPos].GetComponent<movetMentController>().setDance(i);
+            if(dances.Count == turn)
+            {
+                addDances(0);
+            }
 
         }
         else
@@ -262,25 +266,14 @@ public class GameController : MonoBehaviour {
         }
     }
     private void endTurn()
-    {
-        GameObject pl = players[0];
-        players[0] = players[1];
-        players[1] = pl;
+    {   
 
         string temp = lead;
         lead = follow;
         follow = temp;
 
         if (isLead())
-        {
-            playerPos = 1;
-            isTurn = isLead();
-        }
-
-        else
-        {
-            playerPos = 0;
-        }    
+            isTurn = isLead();   
 
         phase = 1;
         turn++;
