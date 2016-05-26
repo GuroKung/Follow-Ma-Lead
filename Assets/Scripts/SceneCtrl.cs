@@ -23,7 +23,7 @@ public class SceneCtrl : MonoBehaviour {
 	}
 
 	public void ToRoom (){
-		Debug.Log("Change to toom scene");
+		Debug.Log("Change to room scene");
 		CanvasGroup room_canvas = Room_Scene.GetComponent<CanvasGroup>();
 
 		StartCoroutine (FadeOut (Lobby_Scene, 1.0f));
