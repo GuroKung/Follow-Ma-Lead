@@ -210,21 +210,32 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void OnCheckDance(SocketIOEvent e){
-        
+        test.text = "on Check Dance";
         checkDanceobject a = checkDanceobject.createFromJson(e.data.ToString());
+        test.text = e.data.ToString();
         foreach(int x in a.player1_dance)
         {
             players[0].GetComponent<movetMentController>().setDance(x);
+            string t = " " + x;
+            playerTexts[0].text += t;
         }
         foreach (int x in a.player2_dance)
         {
+            string t = " " + x;
+            playerTexts[1].text += t;
             players[1].GetComponent<movetMentController>().setDance(x);
         }
         if (a.isEnd == true)
         {
             test.text = "Game is End";
+            for(int i = 0; i<2; i++)
+            {
+                players[i].GetComponent<movetMentController>().setDance(5 + i);
+            }
+        }else {
+            endTurn();
         }
-        endTurn();
+        
 
     }
     private void addDances(int i)
@@ -252,19 +263,30 @@ public class GameController : MonoBehaviour {
     }
     private void endTurn()
     {
-        if (isLead())
-            playerPos = 1;
-        else
-            playerPos = 0;
-
-        var pl = players[0];
+        GameObject pl = players[0];
         players[0] = players[1];
         players[1] = pl;
 
-        var temp = lead;
+        string temp = lead;
         lead = follow;
-        follow = temp; 
+        follow = temp;
+
+        if (isLead())
+        {
+            playerPos = 1;
+            isTurn = isLead();
+        }
+
+        else
+        {
+            playerPos = 0;
+        }    
+
+        phase = 1;
+        turn++;
+        test.text = "" + isTurn;
     }
+
     // Update is called once per frame
     void Update () {
         if (isTurn)
