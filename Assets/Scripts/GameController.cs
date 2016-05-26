@@ -28,6 +28,7 @@ public class GameController : MonoBehaviour {
     private string player;
     private int playerID;
     private int playerPos;
+    private int[] pos;
 
     private bool isStart = false;
     private bool isTurn = false;
@@ -47,7 +48,7 @@ public class GameController : MonoBehaviour {
     void Start () {
 		GameObject go = GameObject.Find("SocketIO");
 		socket = go.GetComponent<SocketIOComponent>();
-
+        pos = new int[2];
 		// Socket Events
 		socket.On("NET_AVAILABLE", onConnection);
 		socket.On("CONNECTED", OnAuthen);
@@ -133,8 +134,12 @@ public class GameController : MonoBehaviour {
         lead = lead.Substring(1, lead.Length - 2);
         follow = follow.Substring(1, follow.Length - 2);
         player = player.Substring(1, player.Length - 2);
-        playerTexts[0].text = lead;
-        playerTexts[1].text = follow;
+        playerTexts[0].text = "lead";
+        playerTexts[1].text = "follow";
+        for(int i = 0; i<pos.Count(); i++)
+        {
+            pos[i] = i;
+        }
         if (isLead())
         {
             playerPos = 0;
@@ -165,7 +170,7 @@ public class GameController : MonoBehaviour {
 
 	public void OnLeadDance(SocketIOEvent e){
         test.text = "On lead dance";
-		movetMentController play = players[0].GetComponent<movetMentController>();
+		movetMentController play = players[pos[0]].GetComponent<movetMentController>();
         
         ArrayObject a = ArrayObject.createFromJson(e.data.ToString());
         foreach ( int x in a.lead_dances)
@@ -215,15 +220,15 @@ public class GameController : MonoBehaviour {
         test.text = e.data.ToString();
         foreach(int x in a.player1_dance)
         {
-            players[0].GetComponent<movetMentController>().setDance(x);
+            players[pos[0]].GetComponent<movetMentController>().setDance(x);
             string t = " " + x;
-            playerTexts[0].text += t;
+            playerTexts[pos[0]].text += t;
         }
         foreach (int x in a.player2_dance)
         {
             string t = " " + x;
-            playerTexts[1].text += t;
-            players[1].GetComponent<movetMentController>().setDance(x);
+            playerTexts[pos[1]].text += t;
+            players[pos[1]].GetComponent<movetMentController>().setDance(x);
         }
         if (a.isEnd == true)
         {
@@ -272,11 +277,17 @@ public class GameController : MonoBehaviour {
         lead = follow;
         follow = temp;
 
-        if (isLead())
-            isTurn = isLead();   
+        int tempI = pos[0];
+        pos[0] = pos[1];
+        pos[1] = tempI;
 
+        if (isLead())
+            isTurn = isLead();
+        
         phase = 1;
         turn++;
+        playerTexts[pos[0]].text = "lead";
+        playerTexts[pos[1]].text = "follow";
         test.text = "" + isTurn;
     }
 
