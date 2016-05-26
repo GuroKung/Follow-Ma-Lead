@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using PlayFab;
+using PlayFab.ClientModels;
 using System;
 using System.Linq;
 using System.Collections;
@@ -47,6 +49,10 @@ public class GameController : MonoBehaviour {
         //players[0].GetComponent<movetMentController>().setDance(1);
     }
 		
+	void Awake(){
+		PlayFabSettings.TitleId = "145A"; // title id goes here.
+	} 
+
     private bool isLead()
     {
         return lead == player;
