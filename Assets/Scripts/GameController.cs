@@ -13,6 +13,15 @@ public class GameController : MonoBehaviour {
     public Text test;
     public List<Text> playerTexts;
 
+	public InputField username;
+	public InputField password;
+
+	// Playfab
+	public string titleId = "145A";
+	public string PlayFabId;
+
+	public GameObject SceneCtrl;
+
     private SocketIOComponent socket;
 	private string lead;
 	private string follow;
@@ -33,12 +42,14 @@ public class GameController : MonoBehaviour {
     private int phase = 0;
     // anime
     Animator anim;
+
     // Use this for initialization
     void Start () {
 		GameObject go = GameObject.Find("SocketIO");
 		socket = go.GetComponent<SocketIOComponent>();
 
 		// Socket Events
+		socket.On("NET_AVAILABLE", onConnection);
 		socket.On("CONNECTED", OnAuthen);
 		socket.On("USER_JOIN", OnUserJoin);
 		socket.On("GAMESTART", OnGameStart);
@@ -47,11 +58,49 @@ public class GameController : MonoBehaviour {
         // anime
         anim = GetComponent<Animator>();
         //players[0].GetComponent<movetMentController>().setDance(1);
-    }
-		
+    }		
+
 	void Awake(){
-		PlayFabSettings.TitleId = "145A"; // title id goes here.
+		PlayFabSettings.TitleId = titleId; // title id goes here.
 	} 
+
+	public void onConnection(SocketIOEvent e){
+		Debug.Log("is Connected");
+		Debug.Log(e.data.ToString());
+	}
+
+	public void Login () {
+		Debug.Log ("User Login");
+		LoginWithPlayFabRequest request = new LoginWithPlayFabRequest()
+		{
+			TitleId = titleId,
+			Username = username.text,
+			Password = password.text
+		};
+
+		PlayFabClientAPI.LoginWithPlayFab(request, (result) => {
+			PlayFabId = result.PlayFabId;
+			Debug.Log("Got PlayFabID: " + PlayFabId);
+
+			if(result.NewlyCreated)
+			{
+				Debug.Log("(new account)");
+			}
+			else
+			{
+				Debug.Log("(existing account)");
+			}
+			Dictionary<string, string> data = new Dictionary<string, string>();
+			data["name"] = username.text;
+			data["password"] = password.text;
+			socket.Emit("LOGIN", new JSONObject(data));
+			SceneCtrl.GetComponent<SceneCtrl>().ToLooby();
+		},
+			(error) => {
+				Debug.Log("Error logging in player");
+				Debug.Log(error.ErrorMessage);
+			});
+	}
 
     private bool isLead()
     {
