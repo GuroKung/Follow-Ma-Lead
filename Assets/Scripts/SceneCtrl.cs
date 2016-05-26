@@ -32,8 +32,8 @@ public class SceneCtrl : MonoBehaviour {
 
 	public void ToLooby(){
 		Debug.Log("Change to lobby scene");
-		StartCoroutine (FadeOut (Login_Scene, 1.0f));
-		StartCoroutine (FadeIn (Lobby_Scene, 1.0f));
+		StartCoroutine (FadeOut (Login_Scene, 2.0f));
+		StartCoroutine (FadeIn (Lobby_Scene, 2.0f));
 	}
 
 	IEnumerator FadeIn(GameObject scene, float speed)
