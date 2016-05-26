@@ -344,6 +344,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 525923281}
+--- !u!114 &706254084 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11412664, guid: 4b426f3b2a85a4c93b028b4b81b86cbc,
+    type: 2}
+  m_PrefabInternal: {fileID: 2032841609}
+  m_Script: {fileID: 575553740, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &888447005 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 134784, guid: f8347d3f973ee4ffe93f1eb498527e95, type: 2}
@@ -393,7 +399,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 010d39cbd03ee4c99a746c1f8ecdc0d8, type: 2}
       propertyPath: url
-      value: ws://eped-server.herokuapp.com/socket.io/?EIO=4&transport=websocket
+      value: ws://127.0.0.1:3000/socket.io/?EIO=4&transport=websocket
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 010d39cbd03ee4c99a746c1f8ecdc0d8, type: 2}
       propertyPath: autoConnect
@@ -489,6 +495,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &1064682884 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11435122, guid: 4b426f3b2a85a4c93b028b4b81b86cbc,
+    type: 2}
+  m_PrefabInternal: {fileID: 2032841609}
+  m_Script: {fileID: 575553740, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1001 &1589146702
 Prefab:
   m_ObjectHideFlags: 0
@@ -781,7 +793,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 11494022, guid: 4b426f3b2a85a4c93b028b4b81b86cbc, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22471852, guid: 4b426f3b2a85a4c93b028b4b81b86cbc, type: 2}
       propertyPath: m_LocalPosition.x
@@ -883,7 +895,16 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11494022, guid: 4b426f3b2a85a4c93b028b4b81b86cbc, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2088299204}
+    - target: {fileID: 11494022, guid: 4b426f3b2a85a4c93b028b4b81b86cbc, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Login
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11449162, guid: 4b426f3b2a85a4c93b028b4b81b86cbc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 4b426f3b2a85a4c93b028b4b81b86cbc, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &2088299203
@@ -920,6 +941,11 @@ MonoBehaviour:
   playerTexts:
   - {fileID: 525923283}
   - {fileID: 1951115562}
+  username: {fileID: 1064682884}
+  password: {fileID: 706254084}
+  titleId: 145A
+  PlayFabId: 
+  SceneCtrl: {fileID: 521523531}
 --- !u!4 &2088299205
 Transform:
   m_ObjectHideFlags: 0
