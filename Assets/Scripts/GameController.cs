@@ -12,6 +12,8 @@ public class GameController : MonoBehaviour {
     public List<GameObject> players;
     public Text test;
     public List<Text> playerTexts;
+    public Text phaseText;
+    public Text dance;
 
 	public InputField username;
 	public InputField password;
@@ -136,6 +138,7 @@ public class GameController : MonoBehaviour {
         player = player.Substring(1, player.Length - 2);
         playerTexts[0].text = "lead";
         playerTexts[1].text = "follow";
+        dance.text = turn + " moves";
         for(int i = 0; i<pos.Count(); i++)
         {
             pos[i] = i;
@@ -150,6 +153,7 @@ public class GameController : MonoBehaviour {
         }
         isTurn = isLead();
         phase = 1;
+        phaseText.text = "Phase : 1";
         test.text = ""+isTurn;
         //if(isTurn) sendLeadDance();
 	}
@@ -184,6 +188,7 @@ public class GameController : MonoBehaviour {
     {
         isTurn = !isLead();
         phase = 2;
+        phaseText.text = "Phase : 2";
         test.text = "" + isTurn;
     }
 
@@ -220,13 +225,21 @@ public class GameController : MonoBehaviour {
         test.text = e.data.ToString();
         foreach(int x in a.player1_dance)
         {
-            players[pos[0]].GetComponent<movetMentController>().setDance(x);
-            string t = " " + x;
-            playerTexts[pos[0]].text += t;
+            
         }
         foreach (int x in a.player2_dance)
         {
+            
+        }
+        for(int i = 0;i<a.player1_dance.Count(); i++)
+        {
+            int x = a.player1_dance[i];
+            players[pos[0]].GetComponent<movetMentController>().setDance(x);
             string t = " " + x;
+            playerTexts[pos[0]].text += t;
+
+            x = a.player2_dance[i];
+            t = " " + x;
             playerTexts[pos[1]].text += t;
             players[pos[1]].GetComponent<movetMentController>().setDance(x);
         }
@@ -248,7 +261,6 @@ public class GameController : MonoBehaviour {
         if(dances.Count < turn)
         {
             dances.Add(i);
-            players[playerPos].GetComponent<movetMentController>().setDance(i);
             if(dances.Count == turn)
             {
                 addDances(0);
@@ -285,7 +297,9 @@ public class GameController : MonoBehaviour {
             isTurn = isLead();
         
         phase = 1;
+        phaseText.text = "Phase : 1";
         turn++;
+        dance.text = turn + " moves";
         playerTexts[pos[0]].text = "lead";
         playerTexts[pos[1]].text = "follow";
         test.text = "" + isTurn;
