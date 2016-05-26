@@ -15,8 +15,6 @@ public class SceneCtrl : MonoBehaviour {
 		GameObject go = GameObject.Find("SocketIO");
 		socket = go.GetComponent<SocketIOComponent>();
 
-		socket.On("CONNECTED", OnAuthen);
-		socket.On("USER_JOIN", OnUserJoin);
 	}
 		
 	// Update is called once per frame
@@ -24,15 +22,15 @@ public class SceneCtrl : MonoBehaviour {
 	
 	}
 
-	void OnUserJoin (SocketIOEvent e){
-		Debug.Log("User join room");
+	public void ToRoom (){
+		Debug.Log("Change to toom scene");
 		CanvasGroup room_canvas = Room_Scene.GetComponent<CanvasGroup>();
 
 		StartCoroutine (FadeOut (Lobby_Scene, 1.0f));
 		StartCoroutine (FadeIn (Room_Scene, 1.0f));
 	}
 
-	void OnAuthen(SocketIOEvent e){
+	public void ToLooby(){
 		Debug.Log("Change to lobby scene");
 		StartCoroutine (FadeOut (Login_Scene, 1.0f));
 		StartCoroutine (FadeIn (Lobby_Scene, 1.0f));

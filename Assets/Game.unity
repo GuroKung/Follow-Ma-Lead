@@ -393,7 +393,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 010d39cbd03ee4c99a746c1f8ecdc0d8, type: 2}
       propertyPath: url
-      value: ws://eped-server.herokuapp.com/socket.io/?EIO=4&transport=websocket
+      value: ws://127.0.0.1:3000/socket.io/?EIO=4&transport=websocket
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 010d39cbd03ee4c99a746c1f8ecdc0d8, type: 2}
       propertyPath: autoConnect
@@ -583,11 +583,6 @@ GameObject:
 GameObject:
   m_PrefabParentObject: {fileID: 120234, guid: f8347d3f973ee4ffe93f1eb498527e95, type: 2}
   m_PrefabInternal: {fileID: 1589146702}
---- !u!223 &1881153454 stripped
-Canvas:
-  m_PrefabParentObject: {fileID: 22396608, guid: f8347d3f973ee4ffe93f1eb498527e95,
-    type: 2}
-  m_PrefabInternal: {fileID: 1589146702}
 --- !u!224 &1881153456 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 22420106, guid: f8347d3f973ee4ffe93f1eb498527e95,
@@ -761,11 +756,19 @@ Prefab:
     - target: {fileID: 11466568, guid: 4a0a3db8a6ded440c8ab43ed7f5e0c6d, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 1881153454}
+      objectReference: {fileID: 521523532}
     - target: {fileID: 22381172, guid: 4a0a3db8a6ded440c8ab43ed7f5e0c6d, type: 2}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1032869091}
+    - target: {fileID: 11466568, guid: 4a0a3db8a6ded440c8ab43ed7f5e0c6d, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: ToRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 11466568, guid: 4a0a3db8a6ded440c8ab43ed7f5e0c6d, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a0a3db8a6ded440c8ab43ed7f5e0c6d, type: 2}
   m_IsPrefabParent: 0
@@ -776,6 +779,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11494022, guid: 4b426f3b2a85a4c93b028b4b81b86cbc, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 22471852, guid: 4b426f3b2a85a4c93b028b4b81b86cbc, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -855,6 +862,26 @@ Prefab:
     - target: {fileID: 11451232, guid: 4b426f3b2a85a4c93b028b4b81b86cbc, type: 2}
       propertyPath: m_ScreenMatchMode
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11494022, guid: 4b426f3b2a85a4c93b028b4b81b86cbc, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11494022, guid: 4b426f3b2a85a4c93b028b4b81b86cbc, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11494022, guid: 4b426f3b2a85a4c93b028b4b81b86cbc, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 521523532}
+    - target: {fileID: 11494022, guid: 4b426f3b2a85a4c93b028b4b81b86cbc, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ToLooby
+      objectReference: {fileID: 0}
+    - target: {fileID: 11494022, guid: 4b426f3b2a85a4c93b028b4b81b86cbc, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4b426f3b2a85a4c93b028b4b81b86cbc, type: 2}
