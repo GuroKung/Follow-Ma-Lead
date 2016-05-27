@@ -25,7 +25,6 @@ public class SceneCtrl : MonoBehaviour {
 
 	public void ToLogin (){
 		Debug.Log("Change to login scene");
-		CanvasGroup room_canvas = Room_Scene.GetComponent<CanvasGroup>();
 
 		StartCoroutine (FadeOut (Regis_Scene, 1.5f));
 		StartCoroutine (FadeIn (Login_Scene, 1.5f));
@@ -33,7 +32,6 @@ public class SceneCtrl : MonoBehaviour {
 
 	public void ToRegis (){
 		Debug.Log("Change to regis scene");
-		CanvasGroup room_canvas = Room_Scene.GetComponent<CanvasGroup>();
 
 		StartCoroutine (FadeOut (Login_Scene, 1.5f));
 		StartCoroutine (FadeIn (Regis_Scene, 1.5f));
@@ -41,10 +39,16 @@ public class SceneCtrl : MonoBehaviour {
 
 	public void ToRoom (){
 		Debug.Log("Change to room scene");
-		CanvasGroup room_canvas = Room_Scene.GetComponent<CanvasGroup>();
 
 		StartCoroutine (FadeOut (Lobby_Scene, 1.0f));
 		StartCoroutine (FadeIn (Room_Scene, 1.0f));
+	}
+
+	public void BackLobby (){
+		Debug.Log("Change to room scene");
+
+		StartCoroutine (FadeOut (Room_Scene, 1.0f));
+		StartCoroutine (FadeIn (Lobby_Scene, 1.0f));
 	}
 
 	public void ToLooby(){

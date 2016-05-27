@@ -33,6 +33,7 @@ public class GameController : MonoBehaviour {
     private string player;
     private int playerID;
     private int playerPos;
+	private int opponentPos;
     private int[] pos;
 
     private bool isStart = false;
@@ -169,12 +170,14 @@ public class GameController : MonoBehaviour {
 		if (isTurn)
         {
             playerPos = 0;
+			opponentPos = 1;
 
 			test.text = "Let's dance";
         }
         else
         {
             playerPos = 1;
+			opponentPos = 0;
 
 			test.text = "focus on opponent moves";
         }
@@ -261,15 +264,17 @@ public class GameController : MonoBehaviour {
         if (a.isEnd == true)
         {
             test.text = "Game is End";
-            for(int i = 0; i<2; i++)
-            {
-                players[i].GetComponent<movetMentController>().setDance(5 + i);
 
-            }
 			if (isLead ()) {
 				playerTexts [playerPos].text = "Winner";
+				playerTexts [opponentPos].text = "Loser";
+				players[playerPos].GetComponent<movetMentController>().setDance(5);
+				players[opponentPos].GetComponent<movetMentController>().setDance(6);
 			} else {
 				playerTexts [playerPos].text = "Loser";
+				playerTexts [opponentPos].text = "Winner";
+				players[playerPos].GetComponent<movetMentController>().setDance(6);
+				players[opponentPos].GetComponent<movetMentController>().setDance(5);
 			}
 
             this.GetComponent<AudioController>().playEnd();
