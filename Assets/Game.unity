@@ -253,6 +253,12 @@ RectTransform:
   m_PrefabParentObject: {fileID: 22471852, guid: 4b426f3b2a85a4c93b028b4b81b86cbc,
     type: 2}
   m_PrefabInternal: {fileID: 2032841609}
+--- !u!114 &365635672 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11414664, guid: 28a26358f71754c4b84c4dbe36db4f5c,
+    type: 2}
+  m_PrefabInternal: {fileID: 576212069}
+  m_Script: {fileID: 575553740, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &400955726
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,10 +540,10 @@ Prefab:
     - target: {fileID: 11476032, guid: 28a26358f71754c4b84c4dbe36db4f5c, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2088299204}
     - target: {fileID: 11476032, guid: 28a26358f71754c4b84c4dbe36db4f5c, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: Regis
       objectReference: {fileID: 0}
     - target: {fileID: 11473132, guid: 28a26358f71754c4b84c4dbe36db4f5c, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -626,6 +632,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 28a26358f71754c4b84c4dbe36db4f5c, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &596619599 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11493842, guid: 28a26358f71754c4b84c4dbe36db4f5c,
+    type: 2}
+  m_PrefabInternal: {fileID: 576212069}
+  m_Script: {fileID: 575553740, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &603904113
 GameObject:
   m_ObjectHideFlags: 0
@@ -1962,7 +1974,8 @@ MonoBehaviour:
   dance: {fileID: 603904115}
   username: {fileID: 1064682884}
   password: {fileID: 706254084}
-  titleId: 145A
+  regis_username: {fileID: 365635672}
+  regis_password: {fileID: 596619599}
   PlayFabId: 
   SceneCtrl: {fileID: 521523531}
 --- !u!4 &2088299205

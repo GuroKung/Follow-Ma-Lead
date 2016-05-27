@@ -18,8 +18,11 @@ public class GameController : MonoBehaviour {
 	public InputField username;
 	public InputField password;
 
+	public InputField regis_username;
+	public InputField regis_password;
+
 	// Playfab
-	public string titleId = "145A";
+	private string titleId = "145A";
 	public string PlayFabId;
 
 	public GameObject SceneCtrl;
@@ -97,6 +100,28 @@ public class GameController : MonoBehaviour {
 		},
 			(error) => {
 				Debug.Log("Error logging in player");
+				Debug.Log(error.ErrorMessage);
+			});
+	}
+
+	public void  Regis () {
+		Debug.Log ("User Regis");
+		//RegisterPlayFabUser
+		RegisterPlayFabUserRequest request = new RegisterPlayFabUserRequest()
+		{
+			TitleId = titleId,
+			Username = regis_username.text,
+			Password = regis_password.text,
+			RequireBothUsernameAndEmail = false
+		};
+		PlayFabClientAPI.RegisterPlayFabUser(request, (result) => {
+			PlayFabId = result.PlayFabId;
+			Debug.Log("Got PlayFabID: " + PlayFabId);
+
+			SceneCtrl.GetComponent<SceneCtrl>().ToLogin();
+		},
+			(error) => {
+				Debug.Log("Error logging in register");
 				Debug.Log(error.ErrorMessage);
 			});
 	}
