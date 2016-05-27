@@ -48,7 +48,7 @@ public class AudioController : MonoBehaviour {
     {
         lobby.Play();
         game.Stop();
-        end.Play();
+        end.Stop();
 
     }
 

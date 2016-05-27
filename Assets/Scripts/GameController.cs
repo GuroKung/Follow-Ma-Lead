@@ -43,8 +43,7 @@ public class GameController : MonoBehaviour {
     private List<int> dances = new List<int>();
     private int turn = 3;
     private int phase = 0;
-    // anime
-    Animator anim;
+
 
     // Use this for initialization
     void Start () {
@@ -58,9 +57,6 @@ public class GameController : MonoBehaviour {
 		socket.On("GAMESTART", OnGameStart);
 		socket.On("ON_LEADDANCE", OnLeadDance);
 		socket.On("ON_CHECKDANCE", OnCheckDance);
-        // anime
-        anim = GetComponent<Animator>();
-        //players[0].GetComponent<movetMentController>().setDance(1);
     }		
 
 	void Awake(){
@@ -144,23 +140,25 @@ public class GameController : MonoBehaviour {
         {
             pos[i] = i;
         }
-        if (isLead())
+		isTurn = isLead();
+		if (isTurn)
         {
             playerPos = 0;
+
+			test.text = "Let's dance";
         }
         else
         {
             playerPos = 1;
+
+			test.text = "focus on opponent moves";
         }
-        isTurn = isLead();
+        
         phase = 1;
-        phaseText.text = "Phase : 1";
-        test.text = ""+isTurn;
-        //if(isTurn) sendLeadDance();
+        phaseText.text = "Lead Turn";
 	}
 
 	public void sendLeadDance(){
-        Dictionary<string, string> data = new Dictionary<string, string>();
         JSONObject j = new JSONObject(JSONObject.Type.OBJECT);
         JSONObject arr = new JSONObject(JSONObject.Type.ARRAY);
         foreach (int i in dances)
@@ -189,8 +187,13 @@ public class GameController : MonoBehaviour {
     {
         isTurn = !isLead();
         phase = 2;
-        phaseText.text = "Phase : 2";
-        test.text = "" + isTurn;
+        phaseText.text = "Follow Turn";
+		if (isTurn) {
+			test.text = "your turn";
+		}else{
+			test.text = "opponent turn";	
+		}
+        
     }
 
     private void changeTurn()
@@ -221,27 +224,13 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void OnCheckDance(SocketIOEvent e){
-        test.text = "on Check Dance";
         checkDanceobject a = checkDanceobject.createFromJson(e.data.ToString());
-        test.text = e.data.ToString();
-        foreach(int x in a.player1_dance)
-        {
-            
-        }
-        foreach (int x in a.player2_dance)
-        {
-            
-        }
         for(int i = 0;i<a.player1_dance.Count(); i++)
         {
             int x = a.player1_dance[i];
             players[pos[0]].GetComponent<movetMentController>().setDance(x);
-            string t = " " + x;
-            playerTexts[pos[0]].text += t;
 
             x = a.player2_dance[i];
-            t = " " + x;
-            playerTexts[pos[1]].text += t;
             players[pos[1]].GetComponent<movetMentController>().setDance(x);
         }
         if (a.isEnd == true)
@@ -250,7 +239,14 @@ public class GameController : MonoBehaviour {
             for(int i = 0; i<2; i++)
             {
                 players[i].GetComponent<movetMentController>().setDance(5 + i);
+
             }
+			if (isLead ()) {
+				playerTexts [playerPos].text = "Winner";
+			} else {
+				playerTexts [playerPos].text = "Loser";
+			}
+
             this.GetComponent<AudioController>().playEnd();
         }else {
             endTurn();
@@ -299,12 +295,19 @@ public class GameController : MonoBehaviour {
             isTurn = isLead();
         
         phase = 1;
-        phaseText.text = "Phase : 1";
+        phaseText.text = "Lead Turn";
         turn++;
         dance.text = turn + " moves";
         playerTexts[pos[0]].text = "lead";
         playerTexts[pos[1]].text = "follow";
-        test.text = "" + isTurn;
+		if (isTurn) {
+			test.text = "Now, Your turn to lead";
+
+		} else {
+			test.text = "focus on opponent moves";
+
+		}
+
     }
 
     // Update is called once per frame
