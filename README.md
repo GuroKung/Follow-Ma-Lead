@@ -1,5 +1,5 @@
 # Follow-Ma-Lead
-Unity 2D game
+Follow-Ma-Lead is a realtime multi-player dance game (Unity 2D game)
 
 # Screenshot
 
